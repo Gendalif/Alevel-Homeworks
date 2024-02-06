@@ -21,6 +21,49 @@ console.log(b);
 })();
 //Task3
 (function () {
+    var temperature = prompt("Enter temperature plz: ");
+    var DUMMY_DATA = {
+        "1": "1. Celsius to Fahrenheit",
+        "2": "2. Fahrenheit to Celsius",
+    };
+    var conversionType = prompt("Take your comversion type:\n".concat(DUMMY_DATA[1], "\n").concat(DUMMY_DATA[2]));
+    if (temperature !== null && conversionType !== null) {
+        temperature = parseFloat(temperature);
+        var keys = Object.keys(DUMMY_DATA);
+        var result = void 0;
+        if (conversionType === keys[0]) {
+            result = (temperature * 9) / 5 + 32;
+            alert("".concat(temperature, " your temperature in Celsius equelas ").concat(result, " in Fahrenheit."));
+        }
+        else if (conversionType === keys[1]) {
+            result = ((temperature - 32) * 5) / 9;
+            alert("".concat(temperature, " your temperature in Fahrenheit equelas ").concat(result, " in Celsius."));
+        }
+        else {
+            alert("Wrong exchange type please Enter 1 or 2 ");
+        }
+    }
+    else {
+        alert("Please check your data, your data is required!!!");
+    }
+})();
+// Task 4
+(function () {
+    var dividend = parseFloat(prompt("Enter the dividend:"));
+    var divisor = parseFloat(prompt("Enter the divisor:"));
+    function division(dividend, divisor) {
+        return Math.floor(dividend / divisor);
+    }
+    if (!isNaN(dividend) && !isNaN(divisor) && divisor !== 0) {
+        var result = division(dividend, divisor);
+        alert("Your result of division is ".concat(result));
+    }
+    else {
+        alert("Please enter valid numbers. Divisor cannot be zero.");
+    }
+})();
+// Task 5
+(function () {
     var rate = 32;
     var amount = prompt("Enter CKOKA?: ");
     var formatedUserInput = Number(amount);
@@ -35,7 +78,7 @@ console.log(b);
         arguments.callee();
     }
 })();
-// Task 4
+// Task 6
 (function () {
     var red = Number(prompt("Enter Red:"));
     red = red > 0 && red < 255 ? red.toString(16) : null;
@@ -51,7 +94,7 @@ console.log(b);
         arguments.callee();
     }
 })();
-// Task 5
+// Task 7
 (function () {
     var floors = parseInt(prompt("Enter floors: "));
     var apartmentsPerFloor = parseInt(prompt("Enter apartments per floor: "));

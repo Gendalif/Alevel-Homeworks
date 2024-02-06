@@ -6,7 +6,6 @@ b = c = (a * 5) / 2;
 console.log(b);
 
 //Task2
-
 (function () {
   const userDate: string = prompt("Enter your age plz: ");
   const formatedUserDate = Number(userDate);
@@ -24,7 +23,59 @@ console.log(b);
 })();
 
 //Task3
+(function () {
+  let temperature: string | number = prompt("Enter temperature plz: ");
 
+  const DUMMY_DATA = {
+    "1": "1. Celsius to Fahrenheit",
+    "2": "2. Fahrenheit to Celsius",
+  };
+
+  const conversionType = prompt(
+    `Take your comversion type:\n${DUMMY_DATA[1]}\n${DUMMY_DATA[2]}`
+  );
+
+  if (temperature !== null && conversionType !== null) {
+    temperature = parseFloat(temperature);
+    const keys = Object.keys(DUMMY_DATA);
+
+    let result;
+    if (conversionType === keys[0]) {
+      result = (temperature * 9) / 5 + 32;
+      alert(
+        `${temperature} your temperature in Celsius equelas ${result} in Fahrenheit.`
+      );
+    } else if (conversionType === keys[1]) {
+      result = ((temperature - 32) * 5) / 9;
+      alert(
+        `${temperature} your temperature in Fahrenheit equelas ${result} in Celsius.`
+      );
+    } else {
+      alert("Wrong exchange type please Enter 1 or 2 ");
+    }
+  } else {
+    alert("Please check your data, your data is required!!!");
+  }
+})();
+
+// Task 4
+(function () {
+  const dividend = parseFloat(prompt("Enter the dividend:"));
+  const divisor = parseFloat(prompt("Enter the divisor:"));
+
+  function division(dividend, divisor) {
+    return Math.floor(dividend / divisor);
+  }
+
+  if (!isNaN(dividend) && !isNaN(divisor) && divisor !== 0) {
+    const result = division(dividend, divisor);
+    alert(`Your result of division is ${result}`);
+  } else {
+    alert("Please enter valid numbers. Divisor cannot be zero.");
+  }
+})();
+
+// Task 5
 (function () {
   const rate: number = 32;
   const amount: string = prompt("Enter CKOKA?: ");
@@ -41,7 +92,7 @@ console.log(b);
   }
 })();
 
-// Task 4
+// Task 6
 (function () {
   let red: number | string = Number(prompt("Enter Red:"));
   red = red > 0 && red < 255 ? (red.toString(16) as string) : null;
@@ -60,8 +111,7 @@ console.log(b);
   }
 })();
 
-// Task 5
-
+// Task 7
 (function () {
   const floors = parseInt(prompt("Enter floors: "));
   const apartmentsPerFloor = parseInt(prompt("Enter apartments per floor: "));
