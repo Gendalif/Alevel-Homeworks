@@ -24,4 +24,4 @@ const handleLoginValidation = (event) => {
   }
 };
 
-form.onsubmit = validatingLogin;
+form.onsubmit = handleLoginValidation;
