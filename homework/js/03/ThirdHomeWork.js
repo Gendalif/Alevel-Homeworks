@@ -82,3 +82,32 @@ resultTask6 =
     strTask6.slice(0, strTask6.indexOf("<")) +
         strTask6.slice(strTask6.indexOf(">") + 1);
 console.log(resultTask6);
+// Task8
+var testString = "якийсь текст у якому є один тег <br /> і всяке інше";
+var tagToReplace = "<br />";
+var indexOfTag = testString.indexOf(tagToReplace);
+if (indexOfTag) {
+    var partBeforeTag = testString.slice(0, indexOfTag);
+    var partAfterTag = testString
+        .slice(indexOfTag, indexOfTag + tagToReplace.length)
+        .toUpperCase();
+    var restOfString = testString.slice(indexOfTag + tagToReplace.length);
+    var result = partBeforeTag + partAfterTag + restOfString;
+    console.log(result);
+}
+else {
+    alert("Can not find your Tag ".concat(tagToReplace));
+}
+// Task9
+(function () {
+    var userInput = prompt("PLease enter your data with \\n");
+    if (userInput) {
+        var lines = userInput.split("\\n");
+        var reslut_1 = lines.join("\n");
+        alert("Reslut:".concat(reslut_1));
+    }
+    else {
+        alert("All your fileds are required!!!!");
+        arguments.callee();
+    }
+})();
