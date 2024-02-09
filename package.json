@@ -1,0 +1,12 @@
+{
+    "type": "module",
+    "name": "your-package-name",
+    "version": "1.0.0",
+    "main": "Store.mjs",
+    "scripts": {
+      "start": "node Store.mjs"
+    },
+    "dependencies": {
+      "your-dependencies": "^1.0.0"
+    }
+  }
