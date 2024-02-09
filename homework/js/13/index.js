@@ -1,5 +1,5 @@
 import { Store } from "./Store.js";
-import { Password } from "./Password.js";
+import { Input } from "./Input.js";
 
 function counterReducer(state = 0, action) {
   switch (action.type) {
@@ -16,8 +16,22 @@ export const store = new Store(counterReducer, 0);
 
 store.dispatch({ type: "INCREMENT" });
 store.dispatch({ type: "INCREMENT" });
-console.log("GetSate", store.getState());
 
-let p = new Password(document.body, true);
+const loginInput = new Input(document.body, true, "login");
+const passwordInput = new Input(document.body, false, "password");
 
-p.onChange((el) => console.log("data", el));
+const submitButton = document.createElement("button");
+submitButton.textContent = "Login";
+submitButton.disabled = true;
+
+function checkInputs() {
+  const loginValue = loginInput.getValue().trim();
+  const passwordValue = passwordInput.getValue().trim();
+
+  submitButton.disabled = !(loginValue && passwordValue);
+}
+
+loginInput.onChange = checkInputs;
+passwordInput.onChange = checkInputs;
+
+document.body.appendChild(submitButton);
