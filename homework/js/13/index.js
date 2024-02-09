@@ -1,5 +1,6 @@
 import { Store } from "./Store.js";
 import { Input } from "./Input.js";
+import { LoginForm } from "./LoginForm.js";
 
 function counterReducer(state = 0, action) {
   switch (action.type) {
@@ -17,8 +18,8 @@ export const store = new Store(counterReducer, 0);
 store.dispatch({ type: "INCREMENT" });
 store.dispatch({ type: "INCREMENT" });
 
-const loginInput = new Input(document.body, true, "login");
-const passwordInput = new Input(document.body, false, "password");
+const loginInput = new Input(document.body, true, "Login");
+const passwordInput = new Input(document.body, false, "Password");
 
 const submitButton = document.createElement("button");
 submitButton.textContent = "Login";
@@ -35,3 +36,5 @@ loginInput.onChange = checkInputs;
 passwordInput.onChange = checkInputs;
 
 document.body.appendChild(submitButton);
+
+const loginForm = new LoginForm(document.body);

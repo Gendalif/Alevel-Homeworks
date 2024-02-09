@@ -22,7 +22,7 @@ Input.prototype.render = function () {
   });
   this.parent.appendChild(text);
   this.parent.appendChild(this.input);
-  if (this.type === "password") {
+  if (this.type === "Password") {
     this.toggleButton = document.createElement("button");
     this.toggleButton.textContent = this.open ? "Hide" : "Show";
     this.toggleButton.addEventListener("click", () => {
